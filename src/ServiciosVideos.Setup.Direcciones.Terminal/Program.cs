@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using System.Linq;
 using ServiciosVideos.Setup.Direcciones.Comun;
 using System.Collections.Generic;
-using System.Threading;
+
 
 namespace ServiciosVideos.Setup.Direcciones.TerminalGui
 {
@@ -415,32 +415,7 @@ namespace ServiciosVideos.Setup.Direcciones.TerminalGui
             }
             return true;
         }
-
-        private static void StartThread(Action action)
-        {
-            var t = new Thread(new ThreadStart(() =>
-            {
-                Application.MainLoop.Invoke(() =>
-                {
-                    action();
-                });
-            }));
-            t.Start();   
-        }
-
-        private static void CreateThread(Action action)
-        {
-            
-            var t = new Thread(new ThreadStart(() =>
-            {
-                Application.MainLoop.Invoke(() =>
-                {
-                    action();
-                });
-            }));
-            t.Start();
-            
-        }
+        
 
         private static bool ValidateNetworkInterface(NetworkInteface tarjetaRedAlmacenada)
         {
