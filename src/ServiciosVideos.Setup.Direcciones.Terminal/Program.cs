@@ -88,18 +88,18 @@ namespace ServiciosVideos.Setup.Direcciones.TerminalGui
             equipoActual.DireccionIp = tarjetaRedAlmacenada.Inet;
 
             var labelEquipoActual = new Label($"Direccion Ip") { X = 1, Y = 1, Width = 18, TextAlignment = TextAlignment.Left };
-            var textDireccionIpEquipoActual = new TextField(equipoActual.DireccionIp) { X = 20 + 1, Y = 1, Width = 20, Used = true };
-            var labelErrorDireccionIpEquipoActual = new Label($"") { X = 20 + 20 + 2, Y = 1, Width = 1 };
+            var textDireccionIpEquipoActual = new TextField(equipoActual.DireccionIp) { X = 24 + 1, Y = 1, Width = 20, Used = true };
+            var labelErrorDireccionIpEquipoActual = new Label($"") { X = 20 + 20 + 6, Y = 1, Width = 1 };
 
-            var labelMascara = new Label($"Mascara (1-32)") { X = 50, Y = 1, Width = 18, TextAlignment = TextAlignment.Left };
-            var textMascaraTarjetaRedActual = new TextField(tarjetaRedAlmacenada.CidrBits) { X = 69, Y = 1, Width = 4, Used = true };
+            var labelMascara = new Label($"Mascara (1-32)") { X = 52, Y = 1, Width = 18, TextAlignment = TextAlignment.Left };
+            var textMascaraTarjetaRedActual = new TextField(tarjetaRedAlmacenada.CidrBits) { X = 71, Y = 1, Width = 4, Used = true };
             var labelMascaraDecimalEquipoActual = new Label($"{tarjetaRedAlmacenada.Netmask}") { X = 80, Y = 1, Width = 20 };
 
             var labelGateway = new Label($"Gateway") { X = 1, Y = 2, Width = 18 };
-            var textGatewayTarjetaActual = new TextField(tarjetaRedAlmacenada.Gateway) { X = 20 + 1, Y = 2, Width = 20, Used = true };
+            var textGatewayTarjetaActual = new TextField(tarjetaRedAlmacenada.Gateway) { X = 24 + 1, Y = 2, Width = 20, Used = true };
 
-            var labelDns = new Label($"DNS") { X = 50, Y = 2, Width = 18 };
-            var textDnsTarjetaRedActual = new TextField(tarjetaRedAlmacenada.NameServersAddresses) { X = 69, Y = 2, Width = 30, Used = true };
+            var labelDns = new Label($"DNS") { X = 52, Y = 2, Width = 18 };
+            var textDnsTarjetaRedActual = new TextField(tarjetaRedAlmacenada.NameServersAddresses) { X = 71, Y = 2, Width = 30, Used = true };
 
             var frameEquipoActual = new FrameView(new Rect(1, etiquetasTarjetasRedDisponibles.Length + 4, 110, 6), $"Tarjeta de Servidor local: {equipoActual.NombreServidor}");
             frameEquipoActual.Add(labelEquipoActual, textDireccionIpEquipoActual, labelErrorDireccionIpEquipoActual,
@@ -118,7 +118,7 @@ namespace ServiciosVideos.Setup.Direcciones.TerminalGui
                 var lbl = new Label(servidor.NombreServidor) { X = 1, Y = y, TextAlignment = TextAlignment.Left, Width = 18 };
 
                 listLabelServidores.Add(lbl);
-                var txtfield = new TextField(servidor.DireccionIp) { X = 20 + 1, Y = y++, Width = 20, Used = true };
+                var txtfield = new TextField(servidor.DireccionIp) { X = 24 + 1, Y = y++, Width = 20, Used = true };
 
                 txtfield.Changed += (evt, obj) =>
                 {
@@ -137,8 +137,8 @@ namespace ServiciosVideos.Setup.Direcciones.TerminalGui
 
             // clave sudo
             var labelPassword = new Label($"Digite su clave") { X = 1, Y = 1, Width = 18, TextAlignment = TextAlignment.Left };
-            var textPassword = new TextField("") { X = 20 + 1, Y = 1, Width = 20, Used = true, Secret = true };
-            var testSudoBtn = new Button(45, 1, "Verificar");
+            var textPassword = new TextField("") { X = 24 + 1, Y = 1, Width = 20, Used = true, Secret = true };
+            var testSudoBtn = new Button(52, 1, "Verificar");
             var testSudoLabel = new Label("") { X = 65, Y = 1 };
             var framePassword = new FrameView(new Rect(1, etiquetasTarjetasRedDisponibles.Length + 4 + 6 + listaServidores.Count + 4, 110, 4), $"Clave de usuario");
             framePassword.Add(labelPassword, textPassword, testSudoBtn, testSudoLabel);
