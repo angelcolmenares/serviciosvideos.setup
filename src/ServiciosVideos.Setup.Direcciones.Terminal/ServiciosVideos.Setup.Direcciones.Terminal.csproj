@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="ListaDescripcionesServicios.json" />
+    <None Remove="ListaDireccionesServidores.json" />
+    <None Remove="ListaMarcadoresServidores.json" />
+    <None Remove="NetworkInteface.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="ListaDescripcionesServicios.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ListaDireccionesServidores.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ListaMarcadoresServidores.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetworkInteface.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Terminal.Gui" Version="0.24.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ServiciosVideos.Setup.Direcciones.Comun\ServiciosVideos.Setup.Direcciones.Comun.csproj" />
+  </ItemGroup>
+
+</Project>

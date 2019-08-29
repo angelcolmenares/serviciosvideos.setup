@@ -1,0 +1,21 @@
+﻿{
+  "Items": [
+    {
+      "NombreServidor": "Videos",
+      "MarcadorDireccionIp": "[[Videos_DireccionIp]]"
+    },
+    {
+      "NombreServidor": "Placas",
+      "MarcadorDireccionIp": "[[Placas_DireccionIp]]"
+    },
+    {
+      "NombreServidor": "ReconfTransferCentral",
+      "MarcadorDireccionIp": "[[ReconfTransferCentral_DireccionIp]]"
+    },
+    {
+      "NombreServidor": "VideoCentral",
+      "MarcadorDireccionIp": "[[VideoCentral_DireccionIp]]"
+    }
+  ]
+    
+}

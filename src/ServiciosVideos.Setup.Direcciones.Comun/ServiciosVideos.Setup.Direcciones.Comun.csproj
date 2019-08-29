@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\ci2.comunes\ci2.comun\src\Ci2.Comun.SystemTools\Ci2.Comun.SystemTools.csproj" />
+  </ItemGroup>
+
+</Project>

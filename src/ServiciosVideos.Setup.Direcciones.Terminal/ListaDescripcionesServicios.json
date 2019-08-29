@@ -1,0 +1,18 @@
+﻿{
+  "Items": [
+    {
+      "Nombre": "ReconfTransfer",
+      "UnitFile": "reconf-transfer.service",
+      "DirectorioDespliegue": "/home/user/Despliegues/ReconfTransfer",
+      "SettingsFile": "application.properties",
+      "SettingsTemplate": "application.properties.template"
+    },
+    {
+      "Nombre": "Platino",
+      "UnitFile": "platino.service",
+      "DirectorioDespliegue": "/home/user/Despliegues/Ci2.Platino.Web",
+      "SettingsFile": "appsettings.json",
+      "SettingsTemplate": "appsettings.json.template"
+    }
+  ]
+}
