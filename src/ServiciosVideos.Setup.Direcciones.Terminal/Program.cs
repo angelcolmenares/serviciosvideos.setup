@@ -191,8 +191,9 @@ namespace ServiciosVideos.Setup.Direcciones.TerminalGui
             textMascaraTarjetaRedActual.Changed += (obj, evt) =>
             {
                 var value = textMascaraTarjetaRedActual.Text.ToString().Trim();
-                labelMascaraDecimalEquipoActual.Text = MascarasRed.ObtenerNotacionDecimal(value);
-                tarjetaRedAlmacenada.Netmask = value;
+                var netmask = MascarasRed.ObtenerNotacionDecimal(value);
+                labelMascaraDecimalEquipoActual.Text = netmask;
+                tarjetaRedAlmacenada.Netmask = netmask;
                 UpdateLabel(labelErrores, Network.IsValidCidr(value), "Mascara Servidor local no  valida");
             };
             
