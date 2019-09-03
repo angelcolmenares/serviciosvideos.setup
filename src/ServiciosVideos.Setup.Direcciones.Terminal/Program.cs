@@ -280,10 +280,17 @@ namespace ServiciosVideos.Setup.Direcciones.TerminalGui
 
                 if (!_isvalid) return;
 
+                
 
                 await SaveNetworInterfaceAsync(tarjetaRedAlmacenada, labelGuardar);
-                await GuardarDireccionesServidoresAsync(listaServidores, equipoActual, tarjetaRedAlmacenada, labelGuardar);
-                await ActualizarConfiguracionServicios(listaServidores, resultadoActualizacion);
+
+                var direccionesServidoresPorActualizar = new List<DireccionServidor>();
+                direccionesServidoresPorActualizar.AddRange(listaServidores);
+                direccionesServidoresPorActualizar.Add(new DireccionServidor { NombreServidor = equipoActual.NombreServidor, DireccionIp = tarjetaRedAlmacenada.Inet });
+
+                await GuardarDireccionesServidoresAsync(direccionesServidoresPorActualizar,  labelGuardar);
+
+                await ActualizarConfiguracionServicios(direccionesServidoresPorActualizar, resultadoActualizacion);
 
                 if (!(await CrearArchivoNetplan(tarjetaRedAlmacenada, labelGuardar, textPassword.Text.ToString().Trim())))
                 {
@@ -345,17 +352,15 @@ namespace ServiciosVideos.Setup.Direcciones.TerminalGui
         }
 
 
-        private static async Task GuardarDireccionesServidoresAsync(List<DireccionServidor> listaServidores, DireccionServidor equipoActual, NetworkInteface tarjetaRedAlmacenada,  Label labelGuardar)
+        private static async Task GuardarDireccionesServidoresAsync(List<DireccionServidor> listaServidores,   Label labelGuardar)
         {
-            var direccionesServidoresPorActualizar = new List<DireccionServidor>();
-            direccionesServidoresPorActualizar.AddRange(listaServidores);
-            direccionesServidoresPorActualizar.Add(new DireccionServidor { NombreServidor = equipoActual.NombreServidor, DireccionIp = tarjetaRedAlmacenada.Inet });
+            
 
-            await Task.Delay(1000);
+            await Task.Delay(500);
             ActualizarLabelGuardar(labelGuardar, $"Guardando ... Lista con Direcciones de los servidores");
             var proveedor = new JsonProveedorDireccionesServidores();
-            await proveedor.GuardarAsync(direccionesServidoresPorActualizar);
-            await Task.Delay(1000);
+            await proveedor.GuardarAsync(listaServidores);
+            await Task.Delay(500);
             ActualizarLabelGuardar(labelGuardar, $"Guardado      Lista con Direcciones de los servidores");
         }
 
@@ -375,7 +380,7 @@ namespace ServiciosVideos.Setup.Direcciones.TerminalGui
             {
                 var resultadoActualizacion = await gestorDirecciones.ActualizarAsync(servicio, listaServidores, ignorarSiNoExistePlantilla: true, backup: true);
                 respuestaActualizacionConfiguracion.Add(new RespuestaActualizarConfiguracionServicio { Servicio = servicio, ResultadoActualizacion = resultadoActualizacion });
-                await Task.Delay(1000);
+                await Task.Delay(500);
                 var listviewSource = respuestaActualizacionConfiguracion.Items.ConvertAll(q => $"{q.Servicio.Nombre.PadRight(20)} : {q.ResultadoActualizacion.Observacion}").ToArray();
                 Application.MainLoop.Invoke(() => resultadosActualizacionLisView.SetSource(listviewSource));
             }
