@@ -292,13 +292,12 @@ namespace ServiciosVideos.Setup.Direcciones.TerminalGui
 
                 await ActualizarConfiguracionServicios(direccionesServidoresPorActualizar, resultadoActualizacion);
 
-                if (!(await CrearArchivoNetplan(tarjetaRedAlmacenada, labelGuardar, textPassword.Text.ToString().Trim())))
+                if (!(await CrearArchivoNetplan(tarjetaRedAlmacenada, labelGuardar, textPassword.Text.ToString())))
                 {
                     return;
                 }
-
-
-                if (await NetplanApply(textPassword.Text.ToString().Trim(), labelGuardar))
+                
+                if (await NetplanApply(textPassword.Text.ToString(), labelGuardar))
                 {
                     ActualizarLabelGuardar(labelGuardar, "Actualizacion finalizada con EXITO");
                 }
@@ -400,7 +399,7 @@ namespace ServiciosVideos.Setup.Direcciones.TerminalGui
 
 
         private static async Task<bool> ValidatePassword(TextField textPasword)
-            => (!textPasword.Text.IsEmpty && (await Bash.IsSudoPasswordAsync(textPasword.Text.ToString().Trim())));
+            => (!textPasword.Text.IsEmpty && (await Bash.IsSudoPasswordAsync(textPasword.Text.ToString())));
                    
                 
 
