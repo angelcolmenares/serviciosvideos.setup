@@ -1,7 +1,5 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Threading.Tasks;
-using Ci2.Comun.SystemTools;
 using Microsoft.Extensions.Configuration;
 
 namespace ServiciosVideos.Setup.Direcciones.Comun

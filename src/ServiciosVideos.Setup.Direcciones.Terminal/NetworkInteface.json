@@ -1,10 +1,9 @@
-﻿{
-
-  "CardName": "wifi0",
+{
+  "CardName": "eth0",
   "Inet": "172.16.2.244",
   "Netmask": "255.255.254.0",
   "Broadcast": "",
   "Gateway": "172.16.2.1",
-  "NameServersAddresses": "8.8.8.8,8.8.4.4"
-
+  "NameServersAddresses": "8.8.8.8,8.8.4.4",
+  "CidrBits": "23"
 }

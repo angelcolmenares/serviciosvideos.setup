@@ -1,0 +1,34 @@
+{
+  "Items": [
+    {
+      "Servicio": {
+        "Nombre": "ReconfTransfer",
+        "UnitFile": "reconf-transfer.service",
+        "DirectorioDespliegue": "/home/user/Despliegues/ReconfTransfer",
+        "SettingsFile": "application.properties",
+        "SettingsTemplate": "application.properties.template"
+      },
+      "ResultadoActualizacion": {
+        "Success": true,
+        "Error": null,
+        "Exception": null,
+        "Observacion": "Sin Plantilla. Actualizacion no realizada"
+      }
+    },
+    {
+      "Servicio": {
+        "Nombre": "Platino",
+        "UnitFile": "platino.service",
+        "DirectorioDespliegue": "/home/user/Despliegues/Ci2.Platino.Web",
+        "SettingsFile": "appsettings.json",
+        "SettingsTemplate": "appsettings.json.template"
+      },
+      "ResultadoActualizacion": {
+        "Success": true,
+        "Error": null,
+        "Exception": null,
+        "Observacion": "Sin Plantilla. Actualizacion no realizada"
+      }
+    }
+  ]
+}

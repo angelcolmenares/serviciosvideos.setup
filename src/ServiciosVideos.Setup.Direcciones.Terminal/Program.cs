@@ -1,6 +1,5 @@
 ﻿using Terminal.Gui;
 using System;
-using Ci2.Comun.SystemTools;
 using System.Threading.Tasks;
 using System.Linq;
 using ServiciosVideos.Setup.Direcciones.Comun;
@@ -483,8 +482,8 @@ namespace ServiciosVideos.Setup.Direcciones.TerminalGui
         static bool Quit()
         {
             return true;
-            var n = MessageBox.Query(50, 7, "Salir", "Desea salir?", "Si", "No");
-            return n == 0;
+            //var n = MessageBox.Query(50, 7, "Salir", "Desea salir?", "Si", "No");
+            //return n == 0;
         }
 
 

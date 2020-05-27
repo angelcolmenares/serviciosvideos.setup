@@ -1,27 +1,24 @@
-﻿{
+{
   "Items": [
     {
       "NombreServidor": "Videos",
-      "DireccionIp": ""
+      "DireccionIp": "192.168.248.110"
     },
     {
       "NombreServidor": "VideoCentral",
       "DireccionIp": "192.168.248.112"
     },
     {
-      "NombreServidor": "Ignacio",
-      "DireccionIp": "172.16.2.197"
-    },
-    {
       "NombreServidor": "Placas",
       "DireccionIp": "172.16.2.243"
-
     },
-
     {
       "NombreServidor": "ReconfTransferCentral",
       "DireccionIp": "192.168.248.112"
+    },
+    {
+      "NombreServidor": "Ignacio",
+      "DireccionIp": "172.16.2.244"
     }
-
   ]
 }
